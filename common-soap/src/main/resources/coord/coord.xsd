@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+    targetNamespace = "http://oscars.es.net/OSCARS/coord"
+    xmlns:tns = "http://oscars.es.net/OSCARS/coord"
+    xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
+    xmlns:authP="http://oscars.es.net/OSCARS/authParams"
+    elementFormDefault = "qualified" >
+
+    <xsd:import namespace="http://oscars.es.net/OSCARS/authParams" 
+        schemaLocation="../authParams.xsd" />
+    <xsd:element name="PSSReplyReq"        type="tns:PSSReplyContent" />
+
+    <xsd:complexType name="PSSReplyContent">
+        <xsd:sequence>
+            <xsd:element name="globalReservationId" type="xsd:string" />
+            <xsd:element name="status" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute use ="required" name = "id" type="xsd:string" />
+        <xsd:attribute use ="required" name = "replyType" type="xsd:string" />
+    </xsd:complexType>
+</xsd:schema>

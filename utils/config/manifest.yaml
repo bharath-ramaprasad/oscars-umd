@@ -1,0 +1,25 @@
+Utils:
+    UNITTEST:
+        templateDir:        'OSCARS_DIST/utils/config'
+        config.yaml:        'OSCARS_DIST/utils/config/config.yaml'
+        topicset.xml:       'OSCARS_DIST/utils/config/topicset.xml'
+        topicnamespace.xml: 'OSCARS_DIST/utils/config/topicnamespace.xml'
+
+    DEVELOPMENT:
+        templateDir:        'OSCARS_HOME/Utils/conf/'
+        config.yaml:        'OSCARS_HOME/Utils/conf/config.yaml'
+        topicset.xml:       'OSCARS_HOME/Utils/conf/topicset.xml'
+        topicnamespace.xml: 'OSCARS_HOME/Utils/conf/topicnamespace.xml'
+
+    SDK:
+        templateDir:        'OSCARS_HOME/Utils/conf/'
+        config.yaml:        'OSCARS_HOME/Utils/conf/config.yaml'
+        topicset.xml:       'OSCARS_HOME/Utils/conf/topicset.xml'
+        topicnamespace.xml: 'OSCARS_HOME/Utils/conf/topicnamespace.xml'
+
+    PRODUCTION:
+        templateDir:        'OSCARS_HOME/Utils/conf/'
+        config.yaml:        'OSCARS_HOME/Utils/conf/config.yaml'
+        topicset.xml:       'OSCARS_HOME/Utils/conf/topicset.xml'
+        topicnamespace.xml: 'OSCARS_HOME/Utils/conf/topicnamespace.xml'
+

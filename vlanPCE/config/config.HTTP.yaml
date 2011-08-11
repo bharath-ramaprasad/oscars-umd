@@ -1,0 +1,8 @@
+---
+soap:
+    publishTo:  'http://localhost:9010/OSCARS/vlanPCE'
+
+# rmUrl: 'http://localhost:9006/OSCARS/ResourceManager'
+
+localDomainId: 'es.net'
+mpls: 1

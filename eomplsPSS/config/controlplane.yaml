@@ -1,0 +1,13 @@
+---
+
+    "urn:ogf:network:foo.net:node1":
+        ipv4:   10.0.0.1
+        vendor: cisco
+    "urn:ogf:network:foo.net:node1:portA:linkA":
+        ipv4:   10.0.0.2
+
+    "urn:ogf:network:foo.net:node2":
+        ipv4:   10.0.20.1
+        vendor: juniper
+    "urn:ogf:network:foo.net:node2:portB:linkB":
+        ipv4:   10.0.2.2

@@ -1,0 +1,25 @@
+---
+soap:
+    publishTo:  'http://localhost:9050/testPSS'
+
+pss:
+    setup:
+        agent:      'net.es.oscars.pss.test.sim.SimSetupAgent'
+    teardown:
+        agent:      'net.es.oscars.pss.test.sim.SimTeardownAgent'
+    modify:
+        agent:      'net.es.oscars.pss.stub.StubModifyAgent'
+    notify:
+        agent:      'net.es.oscars.pss.stub.StubNotifyAgent'
+    status:
+        agent:      'net.es.oscars.pss.test.sim.SimStatusAgent'
+        options:
+            simulateFailure: false
+    workflow:
+        agent:      'net.es.oscars.pss.workflow.FifoWF'
+    validate:
+        agent:      'net.es.oscars.pss.stub.StubValidationAgent'
+
+
+coord:
+    url:           'http://localhost:9003/OSCARS/Coord'

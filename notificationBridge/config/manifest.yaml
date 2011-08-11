@@ -1,0 +1,32 @@
+NotificationBridgeService:
+    UNITTEST:
+        templateDir:        'OSCARS_DIST/notificationBridge/config'
+        config.yaml:        'OSCARS_DIST/notificationBridge/config/config.HTTP.yaml'
+        server-cxf.xml:     'OSCARS_DIST/notificationBridge/config/server-cxf-http.xml'
+        client-cxf.xml:     'OSCARS_DIST/notificationBridge/config/client-cxf-http.xml'
+        log4j.properties:   'OSCARS_DIST/notificationBridge/config/log4j.LOG.properties'
+        wsdl:               'OSCARS_DIST/common-soap/src/main/resources/notificationBridge.wsdl'
+
+    DEVELOPMENT:
+        templateDir:        'OSCARS_HOME/NotificationBridgeService/conf/'
+        config.yaml:        'OSCARS_HOME/NotificationBridgeService/conf/config.HTTP.yaml'
+        server-cxf.xml:     'OSCARS_HOME/NotificationBridgeService/conf/server-cxf-http.xml'
+        client-cxf.xml:     'OSCARS_HOME/NotificationBridgeService/conf/client-cxf-http.xml'
+        log4j.properties:   'OSCARS_HOME/NotificationBridgeService/conf/log4j.MESSAGE.properties'
+        wsdl:               'OSCARS_HOME/wsdl/OSCARSService/NotificationBridge.wsdl'
+
+    SDK:
+        templateDir:        'OSCARS_HOME/NotificationBridgeService/conf/'
+        config.yaml:        'OSCARS_HOME/NotificationBridgeService/conf/config.HTTP.yaml'
+        server-cxf.xml:     'OSCARS_HOME/NotificationBridgeService/conf/server-cxf-http.xml'
+        client-cxf.xml:     'OSCARS_HOME/NotificationBridgeService/conf/client-cxf-http.xml'
+        log4j.properties:   'OSCARS_HOME/NotificationBridgeService/conf/log4j.DEBUG.properties'
+        wsdl:               'OSCARS_HOME/wsdl/OSCARSService/NotificationBridge.wsdl'
+
+    PRODUCTION:
+        templateDir:        'OSCARS_HOME/NotificationBridgeService/conf/'
+        config.yaml:        'OSCARS_HOME/NotificationBridgeService/conf/config.SSL.yaml'
+        server-cxf.xml:     'OSCARS_HOME/NotificationBridgeService/conf/server-cxf-ssl.xml'
+        client-cxf.xml:     'OSCARS_HOME/NotificationBridgeService/conf/client-cxf-ssl.xml'
+        log4j.properties:   'OSCARS_HOME/NotificationBridgeService/conf/log4j.INFO.properties'
+        wsdl:               'OSCARS_HOME/wsdl/OSCARSService/NotificationBridge.wsdl'

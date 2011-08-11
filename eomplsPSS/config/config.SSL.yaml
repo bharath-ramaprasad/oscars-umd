@@ -1,0 +1,19 @@
+---
+soap:
+    publishTo:  'https://localhost:9050/OSCARS/PSSService'
+
+pss:
+    setup:
+        agent:      'net.es.oscars.pss.stub.StubSetupAgent'
+    teardown:
+        agent:      'net.es.oscars.pss.stub.StubTeardownAgent'
+    modify:
+        agent:      'net.es.oscars.pss.stub.StubModifyAgent'
+    status:
+        agent:      'net.es.oscars.pss.stub.StubStatusAgent'
+        options:
+            simulateFailure: false
+    workflow:
+        agent:      'net.es.oscars.pss.workflow.FifoWF'
+    validate:
+        agent:      'net.es.oscars.pss.stub.StubValidationAgent'

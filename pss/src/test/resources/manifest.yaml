@@ -1,0 +1,11 @@
+---
+PSSService:
+    UNITTEST:
+        config.yaml:        'OSCARS_DIST/pss/src/test/resources/config.yaml'
+        server-cxf.xml:     'OSCARS_DIST/pss/src/test/resources/server-cxf-http.xml'
+        client-cxf.xml:     'OSCARS_DIST/pss/src/test/resources/client-cxf-http.xml'
+        log4j.properties:   'OSCARS_DIST/pss/src/test/resources/log4j.properties'
+        PSSService.xsd:     'OSCARS_DIST/common-soap/src/main/resources/pss/pss.xsd'
+        PSSService.wsdl:    'OSCARS_DIST/common-soap/src/main/resources/pss/pss.wsdl'
+        CoordService.xsd:   'OSCARS_DIST/common-soap/src/main/resources/coord/coord.xsd'
+        CoordService.wsdl:  'OSCARS_DIST/common-soap/src/main/resources/coord/coord.wsdl'

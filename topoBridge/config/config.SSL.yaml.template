@@ -1,0 +1,23 @@
+---
+soap:
+    publishTo:  'https://localhost:9019/topoBridge'
+
+topoBridge:
+    domainPrefix:   'urn:ogf:network:domain='
+    nsAbbr:         'CtrlPlane'
+    nsUri:          'http://ogf.org/schema/network/topology/ctrlPlane/20080828/'
+    cacheSeconds:   300
+
+    domains:
+        'testdomain-1':
+            source:         'file'
+            file:           'testdomain-1.xml'
+
+        'testdomain-2':
+            source:         'file'
+            file:           'testdomain-2.xml'
+
+        '*':
+            source:         'topoServer'
+            servers:        [ 'ts-server.domain.org' ]
+
