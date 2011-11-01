@@ -34,4 +34,12 @@ You can log on to any of the nodes assigned to your slice, with ssh like so:
 ssh -l your_slice_name -i ~/.ssh/your_non-pub_sshkey node_name_you_want_to_connect_to
 }}}
 
+Adding software to node
+
+{{{
+sudo yum install tomcat5
+sudo yum install mysql
+
+}}}
+
 This is the point that I am at.  Updates coming soon... hopefully very soon.
