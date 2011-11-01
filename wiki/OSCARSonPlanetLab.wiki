@@ -23,4 +23,10 @@ To continue you will need your PI to create a slice for you.  As of this writing
 
 I had my PI create a PLC slice that is not OMF-friendly and assigned to my user.  More information about the slice type and settings can be found on the PlanetLab site.
 
-== 
+== Configure your slice ==
+Once you have been granted a slice, it should be listed in your account when you click on 'My Slices'.  You will now need to add at least one node to your slice.  To do so click on the name of the slice you want to add nodes to.  Then on the next screen there will be a list of nodes to choose from.  Check off the nodes you want to add and then add selected.
+
+Note: It may be best to change the node table layout so that it displays the amount of memory available because of OSCARS 4Gb requirement.  Also it may be best to pick nodes with a light blue status, rather than red.
+
+== Connecting to your nodes ==
+This is the point that I am at.  Updates coming soon... hopefully very soon.
