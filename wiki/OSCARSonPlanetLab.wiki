@@ -1,0 +1,18 @@
+Deploy OSCARS on PlanetLab
+
+= Introduction =
+
+u_mboddie@umassd.edu
+I am attempting to set up an instance of our anycast modified OSCARS on a node in PlanetLab.  I will document my progress here, and hopefully it will later serve as a guide for the rest of the team.
+
+Current state - just started
+
+= Details =
+
+I have signed up for an account on https://www.planet-lab.org/db/persons/register.php.  The account then needs to be approved by your site's Principal Investigator (PI).
+
+You will then need to create a SSH key for accessing PlanetLab nodes, if you have never used PlanetLab before.  I did this from a linux machine with OpenSSH already installed, if you are doing this from a windows machine it may be a little different.  I created a key named id_planetlab in my .ssh folder in my user's home directory with the command below:
+
+ssh-keygen -t rsa -f ~/.ssh/id_planetlab
+
+This command will prompt you for a password which you can choose to use or leave blank.  Once that has completed, sign into your PlanetLab account, click on My Account, and expand the key section.  Now click on the choose file button and navigate to where you created your key.  VERY IMPORTANT: CHOOSE THE .pub FILE TO UPLOAD.  Once you have selected the pub file click on the upload key button and if there are no errors this step is done.
