@@ -29,4 +29,9 @@ Once you have been granted a slice, it should be listed in your account when you
 Note: It may be best to change the node table layout so that it displays the amount of memory available because of OSCARS 4Gb requirement.  Also it may be best to pick nodes with a light blue status, rather than red.
 
 == Connecting to your nodes ==
+You can log on to any of the nodes assigned to your slice, with ssh like so:
+{{{
+ssh -l your_slice_name -i ~/.ssh/your_non-pub_sshkey node_name_you_want_to_connect_to
+}}}
+
 This is the point that I am at.  Updates coming soon... hopefully very soon.
