@@ -31,7 +31,7 @@ Note: It may be best to change the node table layout so that it displays the amo
 == Connecting to your nodes ==
 You can log on to any of the nodes assigned to your slice, with ssh like so:
 {{{
-ssh -l your_slice_name -i ~/.ssh/your_non-pub_sshkey node_name_you_want_to_connect_to
+ssh -l your_slice_name -i ~/.ssh/your_non-pub_sshkey node_hostname_you_want_to_connect_to
 }}}
 
 Adding software to node
@@ -41,11 +41,15 @@ sudo yum install mysql-server
 sudo yum install mysql
 sudo yum install mysql-dlevel
 sudo yum install tomcat5
+sudo yum install subversion
 }}}
 
 If you use yum to install maven it will install version 2.0.4 which is not suitable for OSCARS.  So we have to install that manually.
 
-
+Copy files to node:
+{{{
+scp -i ~/.ssh/your_non-pub_sshkey -r folder_to_transfer your_slice_name@node_hostname_you_want_to_transfer_to:
+}}}
 
 starting mysql
 {{{
