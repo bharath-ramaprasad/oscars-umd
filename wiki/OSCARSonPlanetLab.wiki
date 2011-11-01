@@ -37,9 +37,19 @@ ssh -l your_slice_name -i ~/.ssh/your_non-pub_sshkey node_name_you_want_to_conne
 Adding software to node
 
 {{{
-sudo yum install tomcat5
+sudo yum install mysql-server
 sudo yum install mysql
+sudo yum install mysql-dlevel
+sudo yum install tomcat5
+}}}
 
+If you use yum to install maven it will install version 2.0.4 which is not suitable for OSCARS.  So we have to install that manually.
+
+
+
+starting mysql
+{{{
+/sbin/service mysqld start
 }}}
 
 This is the point that I am at.  Updates coming soon... hopefully very soon.
