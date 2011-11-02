@@ -37,6 +37,7 @@ You can log on to any of the nodes assigned to your slice, with ssh like so:
 {{{
 ssh -l your_slice_name -i ~/.ssh/your_non-pub_sshkey node_hostname_you_want_to_connect_to
 }}}
+Note: The first time you connect to a node it will ask you the usual RSA fingerprint yes/no to continue question.
 
 Adding software to node
 
