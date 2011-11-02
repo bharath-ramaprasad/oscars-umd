@@ -46,7 +46,7 @@ sudo yum install tomcat5
 sudo yum install subversion
 }}}
 
-If you use yum to install maven it will install version 2.0.4 which is not suitable for OSCARS.  So we have to install that manually.
+If you use yum to install maven it will install version 2.0.4 which is not suitable for OSCARS.  So we have to install that manually.  Download a version of your choice from http://maven.apache.org/download.html.  I prefer 2.2.1 at the moment.  You can upload it to the node along with the OSCARS files.
 
 Copy files to node:
 {{{
