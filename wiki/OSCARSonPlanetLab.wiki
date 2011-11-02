@@ -26,6 +26,8 @@ I had my PI create a PLC slice that is not OMF-friendly and assigned to my user.
 == Configure your slice ==
 Once you have been granted a slice, it should be listed in your account when you click on 'My Slices'.  You will now need to add at least one node to your slice.  To do so click on the name of the slice you want to add nodes to.  Then on the next screen there will be a list of nodes to choose from.  Check off the nodes you want to add and then add selected.
 
+There is a project called CoMon that can be used for selecting multiple nodes for you.  However it is now a membership based project and requires money.  Once I saw that I decided to just add the nodes manually and move on.  Investigating ways to automate node selection may be a good idea though.
+
 Note: It may be best to change the node table layout so that it displays the amount of memory available because of OSCARS 4Gb requirement.  Also it may be best to pick nodes with a light blue status, rather than red.
 
 == Configuring your nodes ==
@@ -52,6 +54,7 @@ Copy files to node:
 {{{
 scp -i ~/.ssh/your_non-pub_sshkey -r folder_to_transfer your_slice_name@node_hostname_you_want_to_transfer_to:
 }}}
+I'm having mixed results with transferring to the node.  It is slow in general, it will work but it takes a while.  A loooooong while.
 
 starting mysql
 {{{
