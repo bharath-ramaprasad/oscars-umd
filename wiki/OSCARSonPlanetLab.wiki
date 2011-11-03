@@ -44,7 +44,6 @@ Adding software to node
 {{{
 sudo yum install mysql-server
 sudo yum install mysql
-sudo yum install mysql-dlevel
 sudo yum install tomcat5
 sudo yum install subversion
 }}}
