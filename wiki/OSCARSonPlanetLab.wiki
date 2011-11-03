@@ -43,7 +43,6 @@ Adding software to node
 
 {{{
 sudo yum install mysql-server
-sudo yum install mysql
 sudo yum install tomcat5
 sudo yum install subversion
 }}}
@@ -58,7 +57,17 @@ I'm having mixed results with transferring to the node.  It is slow in general, 
 
 starting mysql
 {{{
-/sbin/service mysqld start
+sudo /sbin/service mysqld start
+}}}
+
+set mysql root password
+{{{
+/usr/bin/mysqladmin -u root password 'new-password'
+}}}
+
+starting tomcat
+{{{
+sudo tomcat5 start
 }}}
 
 This is the point that I am at.  Updates coming soon... hopefully very soon.
