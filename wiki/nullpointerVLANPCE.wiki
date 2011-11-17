@@ -37,3 +37,5 @@ java.lang.ArrayIndexOutOfBoundsException: 4096
 exception thrown by pceCreate: net.es.oscars.utils.soap.OSCARSServiceException: 4096
 }}}
 === Solution(s) ===
+
+Changed the vlan range to 3000-4000 and it started working.  This is very odd and I think is a bug.  Added it to the TODO list.
