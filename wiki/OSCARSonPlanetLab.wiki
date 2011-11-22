@@ -90,6 +90,6 @@ bin/exportconfig
 ~/apache-maven-2.2.1/bin/mvn install -DskipTests
 }}}
 
-On the last command I am having difficulties with maven.  It seems like it cannot contact the repositories.
+Crap, it would seem that Planet Lab can not use maven because you are not allowed to contact the repositories.  This makes things very difficult.
 
 This is the point that I am at.  Updates coming soon... hopefully very soon.
