@@ -63,6 +63,7 @@ sudo /sbin/service mysqld start
 set mysql root password
 {{{
 /usr/bin/mysqladmin -u root password 'new-password'
+/usr/bin/mysqladmin -u root -h host-name password 'new-password'
 }}}
 
 starting tomcat
