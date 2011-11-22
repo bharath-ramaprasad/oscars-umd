@@ -73,9 +73,23 @@ sudo tomcat5 start
 
 Set environment variables:
 {{{
-export OSCARS_HOME=~/OSCARS_HOME/
-export OSCARS_DIST=~/OSCARS_DIST/
-export JAVA_HOME=/usr/lib/java-1.7.0
+export OSCARS_HOME=~/OSCARS_HOME
+export OSCARS_DIST=~/OSCARS_DIST
+export JAVA_HOME=/usr/lib/jvm/java
 }}}
+
+Run the following:
+{{{
+bin/deployOscarsSrc.sh
+}}}
+This command will prompt you.  You most likely will not want to download the source because you have it already, you will want to create the mysql db and will want the script to create the config files for you.
+
+After successfully running the previous step, run:
+{{{
+bin/exportconfig
+~/apache-maven-2.2.1/bin/mvn install -DskipTests
+}}}
+
+On the last command I am having difficulties with maven.  It seems like it cannot contact the repositories.
 
 This is the point that I am at.  Updates coming soon... hopefully very soon.
