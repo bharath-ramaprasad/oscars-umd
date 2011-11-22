@@ -71,4 +71,11 @@ starting tomcat
 sudo tomcat5 start
 }}}
 
+Set environment variables:
+{{{
+export OSCARS_HOME=~/OSCARS_HOME/
+export OSCARS_DIST=~/OSCARS_DIST/
+export JAVA_HOME=/usr/lib/java-1.7.0
+}}}
+
 This is the point that I am at.  Updates coming soon... hopefully very soon.
