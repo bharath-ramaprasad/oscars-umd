@@ -1,0 +1,95 @@
+Deploy OSCARS on PlanetLab
+
+# Introduction #
+
+u\_mboddie@umassd.edu
+I am attempting to set up an instance of our anycast modified OSCARS on a node in PlanetLab.  I will document my progress here, and hopefully it will later serve as a guide for the rest of the team.
+
+Current state - just started
+
+# Details #
+
+## Account Setup ##
+I have signed up for an account on https://www.planet-lab.org/db/persons/register.php.  The account then needs to be approved by your site's Principal Investigator (PI).
+
+You will then need to create a SSH key for accessing PlanetLab nodes, if you have never used PlanetLab before.  I did this from a linux machine with OpenSSH already installed, if you are doing this from a windows machine it may be a little different.  I created a key named id\_planetlab in my .ssh folder in my user's home directory with the command below:
+```
+ssh-keygen -t rsa -f ~/.ssh/id_planetlab
+```
+This command will prompt you for a password which you can choose to use or leave blank.  Once that has completed, sign into your PlanetLab account, click on My Account, and expand the key section.  Now click on the choose file button and navigate to where you created your key.  VERY IMPORTANT: CHOOSE THE .pub FILE TO UPLOAD.  Once you have selected the pub file click on the upload key button and if there are no errors this step is done.
+
+## Add a slice ##
+To continue you will need your PI to create a slice for you.  As of this writing our site has plenty of slices, so I have started with a fresh slice rather than reusing a previously used one.
+
+I had my PI create a PLC slice that is not OMF-friendly and assigned to my user.  More information about the slice type and settings can be found on the PlanetLab site.
+
+## Configure your slice ##
+Once you have been granted a slice, it should be listed in your account when you click on 'My Slices'.  You will now need to add at least one node to your slice.  To do so click on the name of the slice you want to add nodes to.  Then on the next screen there will be a list of nodes to choose from.  Check off the nodes you want to add and then add selected.
+
+There is a project called CoMon that can be used for selecting multiple nodes for you.  However it is now a membership based project and requires money.  Once I saw that I decided to just add the nodes manually and move on.  Investigating ways to automate node selection may be a good idea though.
+
+Note: It may be best to change the node table layout so that it displays the amount of memory available because of OSCARS 4Gb requirement.  Also it may be best to pick nodes with a light blue status, rather than red.
+
+## Configuring your nodes ##
+Must automate this (cause it is time consuming and boring), but here are my notes from setting up one node for testing.
+
+You can log on to any of the nodes assigned to your slice, with ssh like so:
+```
+ssh -l your_slice_name -i ~/.ssh/your_non-pub_sshkey node_hostname_you_want_to_connect_to
+```
+Note: The first time you connect to a node it will ask you the usual RSA fingerprint yes/no to continue question.
+
+Adding software to node
+
+```
+sudo yum install mysql-server
+sudo yum install tomcat5
+sudo yum install subversion
+```
+
+If you use yum to install maven it will install version 2.0.4 which is not suitable for OSCARS.  So we have to install that manually.  Download a version of your choice from http://maven.apache.org/download.html.  I prefer 2.2.1 at the moment.  You can upload it to the node along with the OSCARS files.
+
+Copy files to node:
+```
+scp -i ~/.ssh/your_non-pub_sshkey -r folder_to_transfer your_slice_name@node_hostname_you_want_to_transfer_to:
+```
+I'm having mixed results with transferring to the node.  It is slow in general, it will work but it takes a while.  A loooooong while.
+
+starting mysql
+```
+sudo /sbin/service mysqld start
+```
+
+set mysql root password
+```
+/usr/bin/mysqladmin -u root password 'new-password'
+/usr/bin/mysqladmin -u root -h host-name password 'new-password'
+```
+
+starting tomcat
+```
+sudo tomcat5 start
+```
+
+Set environment variables:
+```
+export OSCARS_HOME=~/OSCARS_HOME
+export OSCARS_DIST=~/OSCARS_DIST
+export JAVA_HOME=/usr/lib/jvm/java
+```
+
+Run the following:
+```
+bin/deployOscarsSrc.sh
+```
+This command will prompt you.  You most likely will not want to download the source because you have it already, you will want to create the mysql db and will want the script to create the config files for you.
+
+After successfully running the previous step, run:
+```
+bin/exportconfig
+~/apache-maven-2.2.1/bin/mvn install -DskipTests
+```
+
+Crap, it would seem that Planet Lab can not use maven because you are not allowed to contact the repositories.  This makes things very difficult.
+
+This is the point that I am at.  Updates coming soon... hopefully very soon.

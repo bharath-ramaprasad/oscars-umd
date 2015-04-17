@@ -1,0 +1,7 @@
+# Common Errors #
+
+If you encounter an error while working with OSCARS it should be added here for others to refer to.
+
+  * A SOAP 1.2 message is not valid when sent to a SOAP 1.1 only endpoint. [SOAP1\_2message](SOAP1_2message.md)
+  * net.es.oscars.utils.soap.OSCARSServiceException on reservation domainXXXX-XXXX in VLAN PCE [nullpointerVLANPCE](nullpointerVLANPCE.md)
+  * "caught exception java.lang.reflect.InnvocationTargetException" in Dijkstra PCE logs [InnvocationTagetExceptionDijPCE](InnvocationTagetExceptionDijPCE.md)

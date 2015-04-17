@@ -1,0 +1,41 @@
+## net.es.oscars.utils.soap.OSCARSServiceException on reservation domainXXXX-XXXX in VLAN PCE ##
+
+Full debug message from vlanPCE.out:
+```
+DEBUG  ts=2011-11-16T10:06:05.685000Z event=net.es.oscars.pce.VLAN.calculatePath.end guid=testdomain-1-API-5bb8963b-db64-4f5e-89ab-a632011f8a11 gri=testdomain-1-166780 errSeverity=MAJOR status=-1 
+java.lang.NullPointerException
+	at net.es.oscars.pce.vlan.VlanPCE.calculatePath(VlanPCE.java:376)
+	at net.es.oscars.pce.vlan.VlanPCEServer.calculatePath(VlanPCEServer.java:134)
+	at net.es.oscars.pce.SimplePCEServer.processJob(SimplePCEServer.java:75)
+	at net.es.oscars.pce.SimplePCEServer.run(SimplePCEServer.java:181)
+	at java.lang.Thread.run(Thread.java:636)
+exception thrown by pceCreate: net.es.oscars.utils.soap.OSCARSServiceException
+```
+
+### History ###
+First occurred when trying to use the geant topology.
+
+Compared the topology to existing working topology and changed a few tags to make it look more like the existing one.  Nothing changes until I changed:
+```
+<CtrlPlane:vlanRangeAvailability>256-4096
+</CtrlPlane:vlanRangeAvailability>
+```
+to:
+```
+<CtrlPlane:vlanRangeAvailability>256-4096</CtrlPlane:vlanRangeAvailability>
+```
+which changed the error in vlanPCE.out to:
+```
+DEBUG  ts=2011-11-17T02:53:08.781000Z event=net.es.oscars.pce.VLAN.calculatePath.end guid=testdomain-1-API-1ac04de5-d209-4e7a-810d-a070f6114af4 gri=testdomain-1-166783 errSeverity=MAJOR status=-1 msg=4096 
+java.lang.ArrayIndexOutOfBoundsException: 4096
+	at net.es.oscars.utils.topology.VlanRange.<init>(VlanRange.java:65)
+	at net.es.oscars.pce.vlan.VlanPCE.calculatePath(VlanPCE.java:376)
+	at net.es.oscars.pce.vlan.VlanPCEServer.calculatePath(VlanPCEServer.java:134)
+	at net.es.oscars.pce.SimplePCEServer.processJob(SimplePCEServer.java:75)
+	at net.es.oscars.pce.SimplePCEServer.run(SimplePCEServer.java:181)
+	at java.lang.Thread.run(Thread.java:636)
+exception thrown by pceCreate: net.es.oscars.utils.soap.OSCARSServiceException: 4096
+```
+### Solution(s) ###
+
+Changed the vlan range to 3000-4000 and it started working.  This is very odd and I think is a bug.  Added it to the TODO list.
